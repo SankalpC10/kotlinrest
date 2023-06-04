@@ -15,9 +15,11 @@ phases:
   post_build:
     commands:
       - echo "Packaging the application"
-      - mv build/libs/*.jar app.jar
+      - ls build/libs/
+      - mkdir -p target
+      - cp build/libs/*.jar target/app.jar
 artifacts:
   type: codepipeline
   files:
-    - app.jar
+    - target/app.jar
   discard-paths: yes
