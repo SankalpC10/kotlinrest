@@ -9,6 +9,7 @@ phases:
       - echo Building the application...
       - chmod +x gradlew && ./gradlew build
 artifacts:
+  type: codepipeline
   files:
     - 'build/libs/*.jar'
   name: my-application
