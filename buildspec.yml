@@ -10,11 +10,14 @@ phases:
       - chmod +x gradlew
   build:
     commands:
-      - echo Building the application...
+      - echo "Building the application..."
       - chmod +x gradlew && ./gradlew build
+  post_build:
+    commands:
+      - echo "Packaging the application"
+      - mv build/libs/*.jar app.jar
 artifacts:
   type: codepipeline
   files:
-    - 'build/libs/*.jar'
-  name: kotlinrest-0.0.1-snapshot
-  namespace_type: 1
+    - app.jar
+  discard-paths: yes
