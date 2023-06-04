@@ -12,4 +12,5 @@ artifacts:
   type: codepipeline
   files:
     - 'build/libs/*.jar'
-  name: my-application
+  name: MyOutputArtifacts
+  namespace_type: 1
