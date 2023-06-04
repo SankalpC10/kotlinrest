@@ -15,6 +15,6 @@ phases:
 artifacts:
   type: codepipeline
   files:
-    - build/libs/*.jar
+    - app.jar
+    - plain.jar
   name: MyOutputArtifact
-
