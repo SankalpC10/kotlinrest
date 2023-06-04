@@ -15,6 +15,13 @@ phases:
 artifacts:
   type: codepipeline
   files:
-    - app.jar
-    - plain.jar
+    - build/libs/*.jar
   name: MyOutputArtifact
+  discard-paths: yes
+  base-directory: build/libs
+  secondary-artifacts:
+    AdditionalArtifact:
+      type: codepipeline
+      files:
+        - '*.jar'
+      base-directory: build/libs
