@@ -17,7 +17,7 @@ phases:
       - echo "Packaging the application"
       - ls build/libs/
       - mkdir -p target
-      - cp build/libs/*.jar target/app.jar
+      - find build/libs/ -name '*.jar' -exec cp {} target/app.jar \;
 artifacts:
   type: codepipeline
   files:
