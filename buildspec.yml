@@ -10,16 +10,11 @@ phases:
       - chmod +x gradlew
   build:
     commands:
-      - echo "Building the application..."
-      - chmod +x gradlew && ./gradlew build
-  post_build:
-    commands:
-      - echo "Packaging the application"
-      - ls build/libs/
-      - mkdir -p target
-      - find build/libs/ -name '*.jar' -exec cp {} target/app.jar \;
+      - echo "Build phase"
+      - ./gradlew build
 artifacts:
   type: codepipeline
   files:
-    - target/app.jar
-  discard-paths: yes
+    - build/libs/*.jar
+  name: MyOutputArtifact
+
