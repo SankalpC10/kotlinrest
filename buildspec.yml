@@ -12,5 +12,5 @@ artifacts:
   type: codepipeline
   files:
     - 'build/libs/*.jar'
-  name: MyOutputArtifacts
+  name: kotlinrest-0.0.1-snapshot
   namespace_type: 1
